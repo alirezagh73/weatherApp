@@ -1,0 +1,25 @@
+$input_border_active: .2rem solid #00802a;
+$input_border_radius: .6rem;
+$input_background_color: rgba(255, 243, 205, 0.4);
+$input_font_size: 2rem;
+$input_height: 5rem;
+
+
+
+
+.search {
+  width: 100%;
+
+  &_inp {
+    width: 100%;
+    border-radius: $input_border_radius;
+    outline: none;
+    background-color: $input_background_color;
+    font-size: $input_font_size;
+    border: none;
+    height: $input_height;
+    &:focus {
+      border: $input_border_active;
+    }
+  }
+}

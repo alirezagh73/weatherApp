@@ -1,0 +1,78 @@
+.details {
+  @include sm(){
+    flex-direction: row;
+    align-items:inherit;
+    margin: 40px 0;
+  }
+
+
+  display: flex;
+  justify-content: center;
+  flex: {
+    direction: column-reverse;
+  }
+  align-items: center;
+  color: #fff3cd;
+
+
+  &_table {
+
+    //tablet
+    @include sm(){
+      flex: 1;
+    }
+
+    width: 100%;
+
+    h2 {
+      font-size: 3rem;
+    }
+
+    &_day {
+      font-size: 2rem;
+    }
+
+    &_info {
+
+      li {
+        display: flex;
+        align-items: center;
+        width: content-box;
+        font-size: 2rem;
+
+        figure {
+          width: 3rem;
+
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+
+  &_icon {
+
+    //tablet
+    @include sm(){
+      margin-top: 3rem;
+    }
+
+    width: 15rem;
+    img {
+      width: 100%;
+    }
+  }
+
+
+  &_temp {
+
+    //tablet
+    @include sm(){
+      flex: 1;
+      text-align: end;
+    }
+    font-size: 3rem;
+  }
+}

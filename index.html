@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="scss/style.css">
+    <title>Weather</title>
+
+</head>
+
+<body>
+
+<main class="padding-15">
+    <section class="search">
+        <input class="search_inp margin-t-10 padding-horizontal-10" oninput="searchCities(event)" type="search" name="" id="">
+    </section>
+
+    <section class="details">
+        <article class="details_table margin-vertical-30">
+            <h2 class="margin-b-5">Dubai, AE</h2>
+            <span class="details_table_day">Thursday</span>
+            <ul class="details_table_info margin-t-20">
+                <li>
+                    <figure>
+                        <img src="images/drop.png" alt="">
+                    </figure>
+                    <span>39%</span>
+                </li>
+                <li>
+                    <figure>
+                        <img src="images/drop.png" alt="">
+                    </figure>
+                    <span>West,7.7 m/s</span>
+                </li>
+                <li>
+                    <figure>
+                        <img src="images/drop.png" alt="">
+                    </figure>
+                    <span>1003 hPa</span>
+                </li>
+            </ul>
+        </article>
+
+        <figure class="details_icon margin-b-15">
+            <img src="images/sun.png" alt="">
+        </figure>
+
+        <div class="details_temp margin-vertical-30">+37 &deg;C</div>
+    </section>
+
+    <section class="cards">
+        <ul>
+            <li class="cards_item margin-b-35 padding-vertical-15">
+                <div class="cards_item_sun">
+                    <span></span>
+                </div>
+                <div class="cards_item_day margin-b-15">
+                    <span>Friday</span>
+                </div>
+                <div class="cards_item_temp margin-b-15">
+                    <span>+36 &deg;C</span>
+                </div>
+            </li>
+            <li class="cards_item margin-b-35 padding-vertical-15">
+                <div class="cards_item_sun">
+                    <span></span>
+                </div>
+                <div class="cards_item_day margin-b-15">
+                    <span>Saturday</span>
+                </div>
+                <div class="cards_item_temp margin-b-15">
+                    <span>+36 &deg;C</span>
+                </div>
+            </li>
+            <li class="cards_item margin-b-35 padding-vertical-15">
+                <div class="cards_item_sun">
+                    <span></span>
+                </div>
+                <div class="cards_item_day margin-b-15">
+                    <span>Sunday</span>
+                </div>
+                <div class="cards_item_temp margin-b-15">
+                    <span>+36 &deg;C</span>
+                </div>
+            </li>
+            <li class="cards_item margin-b-35 padding-vertical-15">
+                <div class="cards_item_sun">
+                    <span></span>
+                </div>
+                <div class="cards_item_day margin-b-15">
+                    <span>Monday</span>
+                </div>
+                <div class="cards_item_temp margin-b-15">
+                    <span>+36 &deg;C</span>
+                </div>
+            </li>
+            <li class="cards_item margin-b-35 padding-vertical-15">
+                <div class="cards_item_sun">
+                    <span></span>
+                </div>
+                <div class="cards_item_day margin-b-15">
+                    <span>Thuesday</span>
+                </div>
+                <div class="cards_item_temp margin-b-15">
+                    <span>+36 &deg;C</span>
+                </div>
+            </li>
+
+        </ul>
+    </section>
+</main>
+
+</body>
+
+</html>

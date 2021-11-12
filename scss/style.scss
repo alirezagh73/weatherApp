@@ -1,0 +1,40 @@
+
+@import "fonts";
+@import "margin";
+@import "padding";
+
+@import "mixins/responsive";
+@import "search";
+@import "details";
+@import "cards";
+
+$container_background_color:radial-gradient(circle, rgba(58,141,205,1) 0%, rgba(66, 160,229,1) 40%, rgba(1, 30, 83, 1) 100%);
+html {
+  font-size: 62.5%;
+  font-family: 'roboto-light';
+}
+h1,h2,h3,h4,h5,h6,strong,b{
+  font-family: 'roboto-bold';
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body {
+  background:$container_background_color;
+  min-height: 100vh;
+}
+main{
+  max-width: 1200px;
+  margin:0 auto;
+}

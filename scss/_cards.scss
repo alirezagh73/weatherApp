@@ -1,0 +1,48 @@
+$card-item-border-radius: 1rem;
+
+.cards {
+  width: 100%;
+  color: #fff3cd;
+
+  ul {
+    gap: 16px;
+
+    //tablet
+    @include sm() {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
+  &_item {
+
+    //tablet
+    @include sm() {
+      width: 30%;
+    }
+
+
+    //desktop
+    @include lg() {
+      width: calc(20% - 16px);
+    }
+
+    padding: 3.2rem;
+    background-color: rgba(250, 239, 217, 0.3);
+    text-align: center;
+    border-radius: $card-item-border-radius;
+
+    &_sun {
+      margin: 0 auto 2.5rem;
+      width: 4rem;
+      height: 4rem;
+      background-color: orange;
+      border-radius: 50%;
+    }
+
+    &_day, &_temp {
+      font-size: 2.2rem;
+    }
+  }
+}
