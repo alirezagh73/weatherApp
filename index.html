@@ -8,8 +8,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="scss/style.css">
+    <link rel="stylesheet" href="asset/scss/style.css">
+
     <title>Weather</title>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
 
 </head>
 
@@ -17,7 +19,12 @@
 
 <main class="padding-15">
     <section class="search">
-        <input class="search_inp margin-t-10 padding-horizontal-10" oninput="searchCities(event)" type="search" name="" id="">
+        <input class="search_inp margin-t-10 padding-horizontal-10" oninput="handleRequests()" onblur="unFocusInput()" onfocus="focusInput()" type="search" name=""
+               id="">
+
+        <div class="search_suggestion-wrapper" id="suggestion-wrapper">
+
+        </div>
     </section>
 
     <section class="details">
@@ -27,19 +34,19 @@
             <ul class="details_table_info margin-t-20">
                 <li>
                     <figure>
-                        <img src="images/drop.png" alt="">
+                        <img src="asset/images/drop.png" alt="">
                     </figure>
                     <span>39%</span>
                 </li>
                 <li>
                     <figure>
-                        <img src="images/drop.png" alt="">
+                        <img src="asset/images/drop.png" alt="">
                     </figure>
                     <span>West,7.7 m/s</span>
                 </li>
                 <li>
                     <figure>
-                        <img src="images/drop.png" alt="">
+                        <img src="asset/images/drop.png" alt="">
                     </figure>
                     <span>1003 hPa</span>
                 </li>
@@ -47,7 +54,7 @@
         </article>
 
         <figure class="details_icon margin-b-15">
-            <img src="images/sun.png" alt="">
+            <img src="asset/images/sun.png" alt="">
         </figure>
 
         <div class="details_temp margin-vertical-30">+37 &deg;C</div>
@@ -115,6 +122,8 @@
     </section>
 </main>
 
+<script src="asset/scripts/getCities.js"></script>
+<script src="asset/scripts/app.js"></script>
 </body>
 
 </html>
