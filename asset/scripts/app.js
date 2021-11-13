@@ -8,12 +8,14 @@ function handleRequests() {
 }
 
 async function searchCities(event) {
+    // localStorage.clear();
+    dataSuggestion.innerHTML = '';
     if (event.target.value) {
         let cities = await getCities(event.target.value);
         // console.log(cities)
         toggleSuggestion(event.target.value);
         if (cities.length) {
-            console.log(cities)
+            // console.log(cities)
             showSuggestion(cities);
             setRecentCities(cities);
         } else {
@@ -21,8 +23,6 @@ async function searchCities(event) {
         }
     }
 }
-
-
 
 
 // for showing recent search
@@ -38,7 +38,7 @@ function focusInput() {
 }
 
 function unFocusInput() {
-    // setTimeout(() => toggleSuggestion(false), 220)
+    setTimeout(() => toggleSuggestion(false), 220)
 }
 
 function toggleSuggestion(isShow) {
@@ -50,20 +50,26 @@ function toggleSuggestion(isShow) {
 
 
 function showSuggestion(data) {
-    let items = '<ul class="search_suggestion-wrapper_items" >';
-    data.forEach((item) => {
-        console.log(item)
-        items += `<li class="search_suggestion-wrapper_item" onclick="citySelect()">${item.name}</li>`
+    let ul = document.createElement("ul");
+    ul.classList.add("search_suggestion-wrapper_items");
+    data.forEach((city) => {
+        const element = document.createElement("li");
+        element.classList.add("search_suggestion-wrapper_item");
+        element.onclick = () => citySelect(city)
+        element.innerText = city.name;
+        ul.appendChild(element)
     })
 
-    items += "</ul>";
-    dataSuggestion.innerHTML = items;
+
+    dataSuggestion.appendChild(ul);
 
 }
 
 
 function citySelect(city) {
-    console.log("city selected: ",city)
+    console.log("city selected: ", city);
+    const inputSearch = document.getElementById("search_inp");
+    inputSearch.value = city.name;
 }
 
 
