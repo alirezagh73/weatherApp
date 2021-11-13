@@ -10,7 +10,6 @@ function handleRequests() {
 async function searchCities(event) {
     if (event.target.value) {
         let cities = await getCities(event.target.value);
-
         // console.log(cities)
         toggleSuggestion(event.target.value);
         if (cities.length) {
@@ -23,10 +22,7 @@ async function searchCities(event) {
     }
 }
 
-function unFocusInput() {
 
-    toggleSuggestion(false)
-}
 
 
 // for showing recent search
@@ -41,6 +37,9 @@ function focusInput() {
 
 }
 
+function unFocusInput() {
+    // setTimeout(() => toggleSuggestion(false), 220)
+}
 
 function toggleSuggestion(isShow) {
     isShow ?
@@ -53,7 +52,8 @@ function toggleSuggestion(isShow) {
 function showSuggestion(data) {
     let items = '<ul class="search_suggestion-wrapper_items" >';
     data.forEach((item) => {
-        items += `<li class="search_suggestion-wrapper_item">${item.name}</li>`
+        console.log(item)
+        items += `<li class="search_suggestion-wrapper_item" onclick="citySelect()">${item.name}</li>`
     })
 
     items += "</ul>";
@@ -61,9 +61,15 @@ function showSuggestion(data) {
 
 }
 
+
+function citySelect(city) {
+    console.log("city selected: ",city)
+}
+
+
 function setRecentCities(cities) {
 
-    let recentData = cities.slice(0, 4);
+    let recentData = cities.slice(0, 4)
     recentData = JSON.stringify(recentData);
     localStorage.setItem("RECENT_SEARCH", recentData);
 }
