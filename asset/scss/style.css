@@ -518,7 +518,7 @@
   width: 100%;
 }
 .details_icon {
-  width: 15rem;
+  width: 20rem;
 }
 @media all and (min-width: 768px) {
   .details_icon {
@@ -570,8 +570,8 @@
 }
 .cards_item_sun {
   margin: 0 auto 2.5rem;
-  width: 5rem;
-  height: 5rem;
+  width: 8rem;
+  height: 8rem;
   border-radius: 50%;
 }
 .cards_item_sun img {

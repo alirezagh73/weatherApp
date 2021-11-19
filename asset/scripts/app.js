@@ -103,8 +103,11 @@ async function citySelect(city) {
     const inputSearch = document.getElementById("search_inp");
     inputSearch.value = city.name;
     let response = await getCurrenWeather(city.id);
+    let newResponse = await getFiveDaysWeather(city.id);
+    console.log(newResponse)
     console.log(response);
-    changeCurrentWeatherDetails(response)
+    changeCurrentWeatherDetails(response);
+    createFiveDaysWeatherCards(newResponse)
 }
 
 
@@ -131,3 +134,27 @@ function changeCurrentWeatherDetails(info) {
     windDirection.innerHTML = `${directions[windDir]},${info.wind.speed} m/s`
     cityPressure.innerHTML = `${info.main.pressure} hPa`;
 }
+
+function createFiveDaysWeatherCards(info) {
+    const cardsWrapper = document.getElementById("cards-wrapper");
+    let FiveDayInfo = info.list.filter((item, index) => index % 8 === 0);
+    console.log(FiveDayInfo);
+    let template = '';
+    FiveDayInfo.forEach((item, index) => {
+
+        template += ` <li class="cards_item margin-b-35 padding-vertical-15">
+                           <figure class="cards_item_sun">
+                              <img src="http://openweathermap.org/img/wn/${item.weather[0].icon}@4x.png" alt="">
+                           </figure>
+                           <div class="cards_item_day margin-b-15">
+                                 <span>${moment(item.dt * 1000).format('dddd')}</span>
+                           </div>
+                           <div class="cards_item_temp margin-b-15">
+                                 <span>${item.main.temp} &deg;C</span>
+                           </div>
+                      </li>`
+
+    })
+    cardsWrapper.innerHTML = template;
+}
+
