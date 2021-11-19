@@ -35,10 +35,13 @@ $card-item-border-radius: 1rem;
 
     &_sun {
       margin: 0 auto 2.5rem;
-      width: 4rem;
-      height: 4rem;
-      background-color: orange;
+      width: 5rem;
+      height: 5rem;
+      //background-color: orange;
       border-radius: 50%;
+      img{
+        width: 100%;
+      }
     }
 
     &_day, &_temp {

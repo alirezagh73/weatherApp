@@ -12,14 +12,15 @@
 
     <title>Weather</title>
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 </head>
 
 <body>
 
 <main class="padding-15">
     <section class="search">
-        <input class="search_inp margin-t-10 padding-horizontal-10" oninput="handleRequests()" onblur="unFocusInput()" onfocus="focusInput()" type="search" name=""
+        <input class="search_inp margin-t-10 padding-horizontal-10" oninput="handleRequests()" onblur="unFocusInput()"
+               onfocus="focusInput()" type="search" name=""
                id="search_inp">
 
         <div class="search_suggestion-wrapper" id="suggestion-wrapper">
@@ -29,32 +30,32 @@
 
     <section class="details">
         <article class="details_table margin-vertical-30">
-            <h2 class="margin-b-5">Dubai, AE</h2>
+            <h2 class="city_name margin-b-5">Dubai, AE</h2>
             <span class="details_table_day">Thursday</span>
             <ul class="details_table_info margin-t-20">
                 <li>
                     <figure>
                         <img src="asset/images/drop.png" alt="">
                     </figure>
-                    <span>39%</span>
+                    <span class="city_humidity">39%</span>
                 </li>
                 <li>
                     <figure>
                         <img src="asset/images/drop.png" alt="">
                     </figure>
-                    <span>West,7.7 m/s</span>
+                    <span class="direction">West,7.7 m/s</span>
                 </li>
                 <li>
                     <figure>
                         <img src="asset/images/drop.png" alt="">
                     </figure>
-                    <span>1003 hPa</span>
+                    <span class="city_pressure">1003 hPa</span>
                 </li>
             </ul>
         </article>
 
         <figure class="details_icon margin-b-15">
-            <img src="asset/images/sun.png" alt="">
+            <img class="weather-img" src="asset/images/sun.png" alt="">
         </figure>
 
         <div class="details_temp margin-vertical-30">+37 &deg;C</div>
@@ -63,9 +64,9 @@
     <section class="cards">
         <ul>
             <li class="cards_item margin-b-35 padding-vertical-15">
-                <div class="cards_item_sun">
-                    <span></span>
-                </div>
+                <figure class="cards_item_sun">
+                    <img src="asset/images/sun.png" alt="">
+                </figure>
                 <div class="cards_item_day margin-b-15">
                     <span>Friday</span>
                 </div>
@@ -74,9 +75,9 @@
                 </div>
             </li>
             <li class="cards_item margin-b-35 padding-vertical-15">
-                <div class="cards_item_sun">
-                    <span></span>
-                </div>
+                <figure class="cards_item_sun">
+                    <img src="asset/images/sun.png" alt="">
+                </figure>
                 <div class="cards_item_day margin-b-15">
                     <span>Saturday</span>
                 </div>
@@ -85,9 +86,9 @@
                 </div>
             </li>
             <li class="cards_item margin-b-35 padding-vertical-15">
-                <div class="cards_item_sun">
-                    <span></span>
-                </div>
+                <figure class="cards_item_sun">
+                    <img src="asset/images/sun.png" alt="">
+                </figure>
                 <div class="cards_item_day margin-b-15">
                     <span>Sunday</span>
                 </div>
@@ -96,9 +97,9 @@
                 </div>
             </li>
             <li class="cards_item margin-b-35 padding-vertical-15">
-                <div class="cards_item_sun">
-                    <span></span>
-                </div>
+                <figure class="cards_item_sun">
+                    <img src="asset/images/sun.png" alt="">
+                </figure>
                 <div class="cards_item_day margin-b-15">
                     <span>Monday</span>
                 </div>
@@ -107,9 +108,9 @@
                 </div>
             </li>
             <li class="cards_item margin-b-35 padding-vertical-15">
-                <div class="cards_item_sun">
-                    <span></span>
-                </div>
+                <figure class="cards_item_sun">
+                    <img src="asset/images/sun.png" alt="">
+                </figure>
                 <div class="cards_item_day margin-b-15">
                     <span>Thuesday</span>
                 </div>
@@ -121,9 +122,10 @@
         </ul>
     </section>
 </main>
-
+<script src="asset/scripts/weather.js"></script>
 <script src="asset/scripts/getCities.js"></script>
 <script src="asset/scripts/app.js"></script>
+
 </body>
 
 </html>

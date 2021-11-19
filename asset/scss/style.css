@@ -570,10 +570,12 @@
 }
 .cards_item_sun {
   margin: 0 auto 2.5rem;
-  width: 4rem;
-  height: 4rem;
-  background-color: orange;
+  width: 5rem;
+  height: 5rem;
   border-radius: 50%;
+}
+.cards_item_sun img {
+  width: 100%;
 }
 .cards_item_day, .cards_item_temp {
   font-size: 2.2rem;
